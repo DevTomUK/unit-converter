@@ -1,6 +1,6 @@
 {
   "name": "unit-converter-js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Simple, extensible unit conversion library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -10,9 +10,7 @@
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts",
     "dev": "npm run build -- --watch",
-    "test": "npm run build && jest",
-    "version": "changeset version",
-    "publish": "changeset publish"
+    "test": "npm run build && jest"
   },
   "keywords": [
     "units",
