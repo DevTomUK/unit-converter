@@ -1,7 +1,7 @@
 import { length } from './category/length'
 import { mass } from './category/mass'
 import { temperature } from './category/temperature'
-import { Convert, Conversion, Unit } from './types'
+import { Unit } from './types'
 
 const categories: Record<string, Record<string, Unit>> = {
   length,
@@ -9,52 +9,32 @@ const categories: Record<string, Record<string, Unit>> = {
   temperature,
 }
 
-function createConversion(value: number, fromUnit: Unit): Conversion {
+function convert(value: number, fromUnitName: string) {
+  let fromUnit: Unit | null = null
+  
+  for (const units of Object.values(categories)) {
+    if (units[fromUnitName as keyof typeof units]) {
+      fromUnit = units[fromUnitName as keyof typeof units]
+      break
+    }
+  }
+
+  if (!fromUnit) throw new Error(`Unknown unit: ${fromUnitName}`)
+
   return {
-    value,
-    unit: fromUnit,
-    to: createConversionMethods(value, fromUnit, 'to'),
-    from: createConversionMethods(value, fromUnit, 'from'),
+    to: (toUnitName: string) => {
+      for (const units of Object.values(categories)) {
+        if (units[toUnitName as keyof typeof units]) {
+          const toUnit = units[toUnitName as keyof typeof units]
+          const baseValue = fromUnit!.toBase(value)
+          return toUnit.fromBase(baseValue)
+        }
+      }
+      throw new Error(`Unknown unit: ${toUnitName}`)
+    }
   }
 }
 
-function createConversionMethods(
-  value: number,
-  fromUnit: Unit,
-  direction: 'to' | 'from'
-): Record<string, () => number> {
-  const methods: Record<string, () => number> = {}
-
-  Object.entries(categories).forEach(([categoryName, units]) => {
-    Object.entries(units).forEach(([unitName, unit]) => {
-      methods[unitName] = () => {
-        if (direction === 'to') {
-          const baseValue = fromUnit.toBase(value)
-          return unit.fromBase(baseValue)
-        } else {
-          const baseValue = unit.toBase(value)
-          return fromUnit.fromBase(baseValue)
-        }
-      }
-    })
-  })
-
-  return methods
-}
-
-const convert: Convert = new Proxy({} as Convert, {
-  get: (target, unitName: string) => {
-    return (value: number) => {
-      for (const [categoryName, units] of Object.entries(categories)) {
-        if (units[unitName as keyof typeof units]) {
-          const unit = units[unitName as keyof typeof units]
-          return createConversion(value, unit)
-        }
-      }
-      throw new Error(`Unknown unit: ${unitName}`)
-    }
-  },
-})
-
+export default convert
 export { convert }
 export type { Unit } from './types'
