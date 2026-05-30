@@ -1,19 +1,34 @@
 import { Unit } from '../types'
 
 export const temperature: Record<string, Unit> = {
-  c: {
-    name: 'celsius',
-    toBase: (value) => value + 273.15,
-    fromBase: (value) => value - 273.15,
+  celsius: {
+    names: ['celsius', 'degree celsius', 'degrees celsius'],
+    symbols: ['°C', 'C'],
+    toBase: (value) => {
+      return value + 273.15
+    },
+    fromBase: (value) => {
+      return value - 273.15
+    },
   },
-  k: {
-    name: 'kelvin',
-    toBase: (value) => value,
-    fromBase: (value) => value,
+  kelvin: {
+    names: ['kelvin'],
+    symbols: ['K'],
+    toBase: (value) => {
+      return value
+    },
+    fromBase: (value) => {
+      return value
+    },
   },
-  f: {
-    name: 'fahrenheit',
-    toBase: (value) => (value - 32) * (5 / 9) + 273.15,
-    fromBase: (value) => (value - 273.15) * (9 / 5) + 32,
+  fahrenheit: {
+    names: ['fahrenheit', 'degree fahrenheit', 'degrees fahrenheit'],
+    symbols: ['°F', 'F'],
+    toBase: (value) => {
+      return (value - 32) * (5 / 9) + 273.15
+    },
+    fromBase: (value) => {
+      return (value - 273.15) * (9 / 5) + 32
+    },
   },
 }

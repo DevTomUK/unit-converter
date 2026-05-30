@@ -1,8 +1,9 @@
 import { Unit } from '../types'
 
 export const data: Record<string, Unit> = {
-  b: {
-    name: 'bytes',
+  bytes: {
+    names: ['byte', 'bytes'],
+    symbols: ['B'],
     toBase: (value) => {
       return value
     },
@@ -10,8 +11,9 @@ export const data: Record<string, Unit> = {
       return value
     },
   },
-  kb: {
-    name: 'kilobytes',
+  kilobytes: {
+    names: ['kilobyte', 'kilobytes'],
+    symbols: ['KB'],
     toBase: (value) => {
       return value * 1024
     },
@@ -19,8 +21,9 @@ export const data: Record<string, Unit> = {
       return value / 1024
     },
   },
-  mb: {
-    name: 'megabytes',
+  megabytes: {
+    names: ['megabyte', 'megabytes'],
+    symbols: ['MB'],
     toBase: (value) => {
       return value * 1048576
     },
@@ -28,8 +31,9 @@ export const data: Record<string, Unit> = {
       return value / 1048576
     },
   },
-  gb: {
-    name: 'gigabytes',
+  gigabytes: {
+    names: ['gigabyte', 'gigabytes'],
+    symbols: ['GB'],
     toBase: (value) => {
       return value * 1073741824
     },
@@ -37,8 +41,9 @@ export const data: Record<string, Unit> = {
       return value / 1073741824
     },
   },
-  tb: {
-    name: 'terabytes',
+  terabytes: {
+    names: ['terabyte', 'terabytes'],
+    symbols: ['TB'],
     toBase: (value) => {
       return value * 1099511627776
     },
@@ -46,8 +51,9 @@ export const data: Record<string, Unit> = {
       return value / 1099511627776
     },
   },
-  pb: {
-    name: 'petabytes',
+  petabytes: {
+    names: ['petabyte', 'petabytes'],
+    symbols: ['PB'],
     toBase: (value) => {
       return value * 1125899906842624
     },

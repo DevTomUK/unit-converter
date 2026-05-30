@@ -1,8 +1,9 @@
 import { Unit } from '../types'
 
 export const power: Record<string, Unit> = {
-  w: {
-    name: 'watts',
+  watts: {
+    names: ['watt', 'watts'],
+    symbols: ['W'],
     toBase: (value) => {
       return value
     },
@@ -10,8 +11,9 @@ export const power: Record<string, Unit> = {
       return value
     },
   },
-  kw: {
-    name: 'kilowatts',
+  kilowatts: {
+    names: ['kilowatt', 'kilowatts'],
+    symbols: ['kW'],
     toBase: (value) => {
       return value * 1000
     },
@@ -19,8 +21,9 @@ export const power: Record<string, Unit> = {
       return value / 1000
     },
   },
-  mw: {
-    name: 'megawatts',
+  megawatts: {
+    names: ['megawatt', 'megawatts'],
+    symbols: ['MW'],
     toBase: (value) => {
       return value * 1000000
     },
@@ -28,8 +31,9 @@ export const power: Record<string, Unit> = {
       return value / 1000000
     },
   },
-  hp: {
-    name: 'horsepower',
+  horsepower: {
+    names: ['horsepower'],
+    symbols: ['hp'],
     toBase: (value) => {
       return value * 746
     },
@@ -37,8 +41,9 @@ export const power: Record<string, Unit> = {
       return value / 746
     },
   },
-  btuh: {
-    name: 'BTU per hour',
+  btuperhour: {
+    names: ['BTU per hour', 'british thermal unit per hour'],
+    symbols: ['BTU/h'],
     toBase: (value) => {
       return value * 0.293071
     },

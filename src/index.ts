@@ -1,22 +1,22 @@
-import { angle } from './category/angle'
-import { area } from './category/area'
-import { concentration } from './category/concentration'
-import { data } from './category/data'
-import { density } from './category/density'
-import { energy } from './category/energy'
-import { force } from './category/force'
-import { frequency } from './category/frequency'
-import { illuminance } from './category/illuminance'
 import { length } from './category/length'
 import { mass } from './category/mass'
-import { power } from './category/power'
-import { pressure } from './category/pressure'
-import { speed } from './category/speed'
 import { temperature } from './category/temperature'
-import { time } from './category/time'
-import { viscosity } from './category/viscosity'
 import { volume } from './category/volume'
-import { Unit } from './types'
+import { area } from './category/area'
+import { time } from './category/time'
+import { speed } from './category/speed'
+import { pressure } from './category/pressure'
+import { data } from './category/data'
+import { energy } from './category/energy'
+import { power } from './category/power'
+import { force } from './category/force'
+import { angle } from './category/angle'
+import { frequency } from './category/frequency'
+import { density } from './category/density'
+import { illuminance } from './category/illuminance'
+import { viscosity } from './category/viscosity'
+import { concentration } from './category/concentration'
+import { Unit, Conversion } from './types'
 
 const categories: Record<string, Record<string, Unit>> = {
   length,
@@ -39,29 +39,37 @@ const categories: Record<string, Record<string, Unit>> = {
   concentration,
 }
 
-function convert(value: number, fromUnitName: string) {
-  let fromUnit: Unit | null = null
-  
-  for (const units of Object.values(categories)) {
-    if (units[fromUnitName as keyof typeof units]) {
-      fromUnit = units[fromUnitName as keyof typeof units]
-      break
+function findUnit(unitName: string): { category: string; unit: Unit } | null {
+  for (const [categoryName, units] of Object.entries(categories)) {
+    const unit = units[unitName as keyof typeof units]
+    if (unit) {
+      return { category: categoryName, unit }
     }
   }
+  return null
+}
 
-  if (!fromUnit) throw new Error(`Unknown unit: ${fromUnitName}`)
+function convert(value: number, fromUnitName: string): Conversion {
+  const fromResult = findUnit(fromUnitName)
+  if (!fromResult) {
+    throw new Error(`Unknown unit: ${fromUnitName}`)
+  }
+
+  const fromUnit = fromResult.unit
 
   return {
+    value,
+    unit: fromUnit,
     to: (toUnitName: string) => {
-      for (const units of Object.values(categories)) {
-        if (units[toUnitName as keyof typeof units]) {
-          const toUnit = units[toUnitName as keyof typeof units]
-          const baseValue = fromUnit!.toBase(value)
-          return toUnit.fromBase(baseValue)
-        }
+      const toResult = findUnit(toUnitName)
+      if (!toResult) {
+        throw new Error(`Unknown unit: ${toUnitName}`)
       }
-      throw new Error(`Unknown unit: ${toUnitName}`)
-    }
+
+      const toUnit = toResult.unit
+      const baseValue = fromUnit.toBase(value)
+      return toUnit.fromBase(baseValue)
+    },
   }
 }
 

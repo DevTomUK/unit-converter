@@ -1,8 +1,9 @@
 import { Unit } from '../types'
 
 export const time: Record<string, Unit> = {
-  s: {
-    name: 'seconds',
+  seconds: {
+    names: ['second', 'seconds'],
+    symbols: ['s', 'sec'],
     toBase: (value) => {
       return value
     },
@@ -10,8 +11,9 @@ export const time: Record<string, Unit> = {
       return value
     },
   },
-  ms: {
-    name: 'milliseconds',
+  milliseconds: {
+    names: ['millisecond', 'milliseconds'],
+    symbols: ['ms'],
     toBase: (value) => {
       return value / 1000
     },
@@ -19,8 +21,9 @@ export const time: Record<string, Unit> = {
       return value * 1000
     },
   },
-  min: {
-    name: 'minutes',
+  minutes: {
+    names: ['minute', 'minutes'],
+    symbols: ['min'],
     toBase: (value) => {
       return value * 60
     },
@@ -28,8 +31,9 @@ export const time: Record<string, Unit> = {
       return value / 60
     },
   },
-  h: {
-    name: 'hours',
+  hours: {
+    names: ['hour', 'hours'],
+    symbols: ['h', 'hr'],
     toBase: (value) => {
       return value * 3600
     },
@@ -37,8 +41,9 @@ export const time: Record<string, Unit> = {
       return value / 3600
     },
   },
-  d: {
-    name: 'days',
+  days: {
+    names: ['day', 'days'],
+    symbols: ['d'],
     toBase: (value) => {
       return value * 86400
     },
@@ -46,8 +51,9 @@ export const time: Record<string, Unit> = {
       return value / 86400
     },
   },
-  week: {
-    name: 'weeks',
+  weeks: {
+    names: ['week', 'weeks'],
+    symbols: ['wk'],
     toBase: (value) => {
       return value * 604800
     },
@@ -55,8 +61,9 @@ export const time: Record<string, Unit> = {
       return value / 604800
     },
   },
-  year: {
-    name: 'years',
+  years: {
+    names: ['year', 'years'],
+    symbols: ['yr', 'y'],
     toBase: (value) => {
       return value * 31536000
     },

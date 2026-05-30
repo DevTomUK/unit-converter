@@ -1,33 +1,33 @@
 const { convert } = require('../../dist/index.js')
 
 describe('Data Storage Conversions', () => {
-  test('kb to bytes', () => {
-    const result = convert(1, 'kb').to('b')
+  test('kilobytes to bytes', () => {
+    const result = convert(1, 'kilobytes').to('bytes')
     expect(result).toBe(1024)
   })
 
-  test('mb to kb', () => {
-    const result = convert(1, 'mb').to('kb')
+  test('megabytes to kilobytes', () => {
+    const result = convert(1, 'megabytes').to('kilobytes')
     expect(result).toBe(1024)
   })
 
-  test('gb to mb', () => {
-    const result = convert(1, 'gb').to('mb')
+  test('gigabytes to megabytes', () => {
+    const result = convert(1, 'gigabytes').to('megabytes')
     expect(result).toBe(1024)
   })
 
-  test('tb to gb', () => {
-    const result = convert(1, 'tb').to('gb')
+  test('terabytes to gigabytes', () => {
+    const result = convert(1, 'terabytes').to('gigabytes')
     expect(result).toBe(1024)
   })
 
-  test('gb to bytes', () => {
-    const result = convert(1, 'gb').to('b')
+  test('gigabytes to bytes', () => {
+    const result = convert(1, 'gigabytes').to('bytes')
     expect(result).toBe(1073741824)
   })
 
-  test('pb to tb', () => {
-    const result = convert(1, 'pb').to('tb')
+  test('petabytes to terabytes', () => {
+    const result = convert(1, 'petabytes').to('terabytes')
     expect(result).toBe(1024)
   })
 })

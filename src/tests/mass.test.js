@@ -1,33 +1,33 @@
 const { convert } = require('../../dist/index.js')
 
 describe('Mass Conversions', () => {
-  test('kg to g', () => {
-    const result = convert(5, 'kg').to('g')
+  test('kilograms to grams', () => {
+    const result = convert(5, 'kilograms').to('grams')
     expect(result).toBe(5000)
   })
 
-  test('g to kg', () => {
-    const result = convert(5000, 'g').to('kg')
+  test('grams to kilograms', () => {
+    const result = convert(5000, 'grams').to('kilograms')
     expect(result).toBe(5)
   })
 
-  test('lb to kg', () => {
-    const result = convert(1, 'lb').to('kg')
+  test('pounds to kilograms', () => {
+    const result = convert(1, 'pounds').to('kilograms')
     expect(Math.round(result * 100) / 100).toBe(0.45)
   })
 
-  test('kg to lb', () => {
-    const result = convert(0.453592, 'kg').to('lb')
+  test('kilograms to pounds', () => {
+    const result = convert(0.453592, 'kilograms').to('pounds')
     expect(Math.round(result * 100) / 100).toBe(1.0)
   })
 
-  test('oz to g', () => {
-    const result = convert(10, 'oz').to('g')
+  test('ounces to grams', () => {
+    const result = convert(10, 'ounces').to('grams')
     expect(Math.round(result)).toBe(283)
   })
 
-  test('mg to g', () => {
-    const result = convert(1000, 'mg').to('g')
+  test('milligrams to grams', () => {
+    const result = convert(1000, 'milligrams').to('grams')
     expect(result).toBe(1)
   })
 })

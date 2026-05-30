@@ -1,8 +1,9 @@
 import { Unit } from '../types'
 
 export const speed: Record<string, Unit> = {
-  mps: {
-    name: 'meters per second',
+  meterspersecond: {
+    names: ['meter per second', 'meters per second'],
+    symbols: ['m/s', 'mps'],
     toBase: (value) => {
       return value
     },
@@ -10,8 +11,9 @@ export const speed: Record<string, Unit> = {
       return value
     },
   },
-  kmh: {
-    name: 'kilometers per hour',
+  kilometersperhour: {
+    names: ['kilometer per hour', 'kilometers per hour'],
+    symbols: ['km/h', 'kmh'],
     toBase: (value) => {
       return value / 3.6
     },
@@ -19,8 +21,9 @@ export const speed: Record<string, Unit> = {
       return value * 3.6
     },
   },
-  mph: {
-    name: 'miles per hour',
+  milesperhour: {
+    names: ['mile per hour', 'miles per hour'],
+    symbols: ['mph'],
     toBase: (value) => {
       return value * 0.44704
     },
@@ -28,8 +31,9 @@ export const speed: Record<string, Unit> = {
       return value / 0.44704
     },
   },
-  knot: {
-    name: 'knots',
+  knots: {
+    names: ['knot', 'knots'],
+    symbols: ['kt'],
     toBase: (value) => {
       return value * 0.51444
     },
@@ -37,8 +41,9 @@ export const speed: Record<string, Unit> = {
       return value / 0.51444
     },
   },
-  fps: {
-    name: 'feet per second',
+  feetpersecond: {
+    names: ['foot per second', 'feet per second'],
+    symbols: ['ft/s', 'fps'],
     toBase: (value) => {
       return value * 0.3048
     },

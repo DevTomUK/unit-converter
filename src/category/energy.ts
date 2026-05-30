@@ -1,8 +1,9 @@
 import { Unit } from '../types'
 
 export const energy: Record<string, Unit> = {
-  j: {
-    name: 'joules',
+  joules: {
+    names: ['joule', 'joules'],
+    symbols: ['J'],
     toBase: (value) => {
       return value
     },
@@ -10,8 +11,9 @@ export const energy: Record<string, Unit> = {
       return value
     },
   },
-  kj: {
-    name: 'kilojoules',
+  kilojoules: {
+    names: ['kilojoule', 'kilojoules'],
+    symbols: ['kJ'],
     toBase: (value) => {
       return value * 1000
     },
@@ -19,8 +21,9 @@ export const energy: Record<string, Unit> = {
       return value / 1000
     },
   },
-  cal: {
-    name: 'calories',
+  calories: {
+    names: ['calorie', 'calories'],
+    symbols: ['cal'],
     toBase: (value) => {
       return value * 4.184
     },
@@ -28,8 +31,9 @@ export const energy: Record<string, Unit> = {
       return value / 4.184
     },
   },
-  kcal: {
-    name: 'kilocalories',
+  kilocalories: {
+    names: ['kilocalorie', 'kilocalories'],
+    symbols: ['kcal'],
     toBase: (value) => {
       return value * 4184
     },
@@ -38,7 +42,8 @@ export const energy: Record<string, Unit> = {
     },
   },
   btu: {
-    name: 'BTU',
+    names: ['BTU', 'british thermal unit'],
+    symbols: ['BTU', 'Btu'],
     toBase: (value) => {
       return value * 1055.06
     },
@@ -46,8 +51,9 @@ export const energy: Record<string, Unit> = {
       return value / 1055.06
     },
   },
-  wh: {
-    name: 'watt-hours',
+  watthours: {
+    names: ['watt hour', 'watt hours'],
+    symbols: ['Wh'],
     toBase: (value) => {
       return value * 3600
     },

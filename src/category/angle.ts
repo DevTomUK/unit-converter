@@ -1,8 +1,9 @@
 import { Unit } from '../types'
 
 export const angle: Record<string, Unit> = {
-  deg: {
-    name: 'degrees',
+  degrees: {
+    names: ['degree', 'degrees'],
+    symbols: ['°', 'deg'],
     toBase: (value) => {
       return value * (Math.PI / 180)
     },
@@ -10,8 +11,9 @@ export const angle: Record<string, Unit> = {
       return value * (180 / Math.PI)
     },
   },
-  rad: {
-    name: 'radians',
+  radians: {
+    names: ['radian', 'radians'],
+    symbols: ['rad'],
     toBase: (value) => {
       return value
     },
@@ -19,8 +21,9 @@ export const angle: Record<string, Unit> = {
       return value
     },
   },
-  grad: {
-    name: 'gradians',
+  gradians: {
+    names: ['gradian', 'gradians'],
+    symbols: ['grad'],
     toBase: (value) => {
       return value * (Math.PI / 200)
     },
@@ -28,8 +31,9 @@ export const angle: Record<string, Unit> = {
       return value * (200 / Math.PI)
     },
   },
-  arcmin: {
-    name: 'arcminutes',
+  arcminutes: {
+    names: ['arcminute', 'arcminutes'],
+    symbols: ["'"],
     toBase: (value) => {
       return value * (Math.PI / 10800)
     },
@@ -37,8 +41,9 @@ export const angle: Record<string, Unit> = {
       return value * (10800 / Math.PI)
     },
   },
-  arcsec: {
-    name: 'arcseconds',
+  arcseconds: {
+    names: ['arcsecond', 'arcseconds'],
+    symbols: ['"'],
     toBase: (value) => {
       return value * (Math.PI / 648000)
     },

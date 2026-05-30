@@ -1,33 +1,33 @@
 const { convert } = require('../../dist/index.js')
 
 describe('Force Conversions', () => {
-  test('kn to n', () => {
-    const result = convert(1, 'kn').to('n')
+  test('kilonewtons to newtons', () => {
+    const result = convert(1, 'kilonewtons').to('newtons')
     expect(result).toBe(1000)
   })
 
-  test('lbf to n', () => {
-    const result = convert(1, 'lbf').to('n')
+  test('pounds-force to newtons', () => {
+    const result = convert(1, 'poundsforce').to('newtons')
     expect(Math.round(result * 100) / 100).toBe(4.45)
   })
 
-  test('kgf to n', () => {
-    const result = convert(1, 'kgf').to('n')
+  test('kilogram-force to newtons', () => {
+    const result = convert(1, 'kilogramforce').to('newtons')
     expect(Math.round(result * 100) / 100).toBe(9.81)
   })
 
-  test('dynes to n', () => {
-    const result = convert(100000, 'dyn').to('n')
+  test('dynes to newtons', () => {
+    const result = convert(100000, 'dynes').to('newtons')
     expect(result).toBe(1)
   })
 
-  test('lbf to kgf', () => {
-    const result = convert(2.205, 'lbf').to('kgf')
+  test('pounds-force to kilogram-force', () => {
+    const result = convert(2.205, 'poundsforce').to('kilogramforce')
     expect(Math.round(result * 100) / 100).toBe(1.0)
   })
 
-  test('kn to lbf', () => {
-    const result = convert(1, 'kn').to('lbf')
+  test('kilonewtons to pounds-force', () => {
+    const result = convert(1, 'kilonewtons').to('poundsforce')
     expect(Math.round(result * 100) / 100).toBe(224.81)
   })
 })

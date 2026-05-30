@@ -1,8 +1,9 @@
 import { Unit } from '../types'
 
 export const density: Record<string, Unit> = {
-  kgm3: {
-    name: 'kilograms per cubic meter',
+  kilogramspermetercubed: {
+    names: ['kilogram per cubic meter', 'kilograms per cubic meter'],
+    symbols: ['kg/m³', 'kg/m3'],
     toBase: (value) => {
       return value
     },
@@ -10,8 +11,9 @@ export const density: Record<string, Unit> = {
       return value
     },
   },
-  gcm3: {
-    name: 'grams per cubic centimeter',
+  gramspercentimetercubed: {
+    names: ['gram per cubic centimeter', 'grams per cubic centimeter'],
+    symbols: ['g/cm³', 'g/cm3'],
     toBase: (value) => {
       return value * 1000
     },
@@ -19,8 +21,9 @@ export const density: Record<string, Unit> = {
       return value / 1000
     },
   },
-  lbft3: {
-    name: 'pounds per cubic foot',
+  poundsperfoot: {
+    names: ['pound per cubic foot', 'pounds per cubic foot'],
+    symbols: ['lb/ft³', 'lb/ft3'],
     toBase: (value) => {
       return value * 16.0185
     },
@@ -28,8 +31,9 @@ export const density: Record<string, Unit> = {
       return value / 16.0185
     },
   },
-  lbgal: {
-    name: 'pounds per gallon',
+  poundspergallon: {
+    names: ['pound per gallon', 'pounds per gallon'],
+    symbols: ['lb/gal'],
     toBase: (value) => {
       return value * 119.827
     },

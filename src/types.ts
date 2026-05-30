@@ -1,22 +1,20 @@
 export type ConversionFn = (value: number) => number
 
 export type Unit = {
-  name: string
+  variants: {
+    [nameOrSymbol: string]: {
+      name: string
+      symbol: string
+    }
+  }
   toBase: ConversionFn
   fromBase: ConversionFn
-}
-
-export type ConversionMethods = {
-  [unitName: string]: () => number
 }
 
 export type Conversion = {
   value: number
   unit: Unit
-  to: ConversionMethods
-  from: ConversionMethods
-}
+  to: (unitName: string) => number
+}  
 
-export type Convert = {
-  [unitName: string]: (value: number) => Conversion
-}
+export type Convert = (value: number, unitName: string) => Conversion

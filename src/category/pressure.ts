@@ -1,8 +1,9 @@
 import { Unit } from '../types'
 
 export const pressure: Record<string, Unit> = {
-  pa: {
-    name: 'pascals',
+  pascals: {
+    names: ['pascal', 'pascals'],
+    symbols: ['Pa'],
     toBase: (value) => {
       return value
     },
@@ -10,8 +11,9 @@ export const pressure: Record<string, Unit> = {
       return value
     },
   },
-  bar: {
-    name: 'bars',
+  bars: {
+    names: ['bar', 'bars'],
+    symbols: ['bar'],
     toBase: (value) => {
       return value * 100000
     },
@@ -20,7 +22,8 @@ export const pressure: Record<string, Unit> = {
     },
   },
   psi: {
-    name: 'pounds per square inch',
+    names: ['pound per square inch', 'pounds per square inch'],
+    symbols: ['psi'],
     toBase: (value) => {
       return value * 6894.76
     },
@@ -28,8 +31,9 @@ export const pressure: Record<string, Unit> = {
       return value / 6894.76
     },
   },
-  atm: {
-    name: 'atmospheres',
+  atmospheres: {
+    names: ['atmosphere', 'atmospheres'],
+    symbols: ['atm'],
     toBase: (value) => {
       return value * 101325
     },
@@ -37,8 +41,9 @@ export const pressure: Record<string, Unit> = {
       return value / 101325
     },
   },
-  mmhg: {
-    name: 'millimeters of mercury',
+  millimetersmercury: {
+    names: ['millimeter of mercury', 'millimeters of mercury'],
+    symbols: ['mmHg'],
     toBase: (value) => {
       return value * 133.322
     },
@@ -46,8 +51,9 @@ export const pressure: Record<string, Unit> = {
       return value / 133.322
     },
   },
-  kpa: {
-    name: 'kilopascals',
+  kilopascals: {
+    names: ['kilopascal', 'kilopascals'],
+    symbols: ['kPa'],
     toBase: (value) => {
       return value * 1000
     },

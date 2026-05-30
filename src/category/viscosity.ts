@@ -1,8 +1,9 @@
 import { Unit } from '../types'
 
 export const viscosity: Record<string, Unit> = {
-  cst: {
-    name: 'centistokes',
+  centistokes: {
+    names: ['centistoke', 'centistokes'],
+    symbols: ['cSt'],
     toBase: (value) => {
       return value / 1000000
     },
@@ -10,8 +11,9 @@ export const viscosity: Record<string, Unit> = {
       return value * 1000000
     },
   },
-  st: {
-    name: 'stokes',
+  stokes: {
+    names: ['stoke', 'stokes'],
+    symbols: ['St'],
     toBase: (value) => {
       return value / 10000
     },
@@ -19,8 +21,9 @@ export const viscosity: Record<string, Unit> = {
       return value * 10000
     },
   },
-  cps: {
-    name: 'centipoise',
+  centipoise: {
+    names: ['centipoise'],
+    symbols: ['cP'],
     toBase: (value) => {
       return value / 1000
     },
@@ -28,8 +31,9 @@ export const viscosity: Record<string, Unit> = {
       return value * 1000
     },
   },
-  p: {
-    name: 'poise',
+  poise: {
+    names: ['poise'],
+    symbols: ['P'],
     toBase: (value) => {
       return value / 10
     },
@@ -37,8 +41,9 @@ export const viscosity: Record<string, Unit> = {
       return value * 10
     },
   },
-  pas: {
-    name: 'pascal-seconds',
+  pascalseconds: {
+    names: ['pascal second', 'pascal-second'],
+    symbols: ['Pa·s', 'Pas'],
     toBase: (value) => {
       return value
     },

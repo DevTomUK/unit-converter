@@ -1,33 +1,33 @@
 const { convert } = require('../../dist/index.js')
 
 describe('Power Conversions', () => {
-  test('kw to w', () => {
-    const result = convert(1, 'kw').to('w')
+  test('kilowatts to watts', () => {
+    const result = convert(1, 'kilowatts').to('watts')
     expect(result).toBe(1000)
   })
 
-  test('hp to w', () => {
-    const result = convert(1, 'hp').to('w')
+  test('horsepower to watts', () => {
+    const result = convert(1, 'horsepower').to('watts')
     expect(result).toBe(746)
   })
 
-  test('mw to kw', () => {
-    const result = convert(1, 'mw').to('kw')
+  test('megawatts to kilowatts', () => {
+    const result = convert(1, 'megawatts').to('kilowatts')
     expect(result).toBe(1000)
   })
 
-  test('btuh to w', () => {
-    const result = convert(1000, 'btuh').to('w')
+  test('btu per hour to watts', () => {
+    const result = convert(1000, 'btuperhour').to('watts')
     expect(Math.round(result * 100) / 100).toBe(293.07)
   })
 
-  test('hp to kw', () => {
-    const result = convert(1, 'hp').to('kw')
+  test('horsepower to kilowatts', () => {
+    const result = convert(1, 'horsepower').to('kilowatts')
     expect(Math.round(result * 100) / 100).toBe(0.75)
   })
 
-  test('mw to w', () => {
-    const result = convert(1, 'mw').to('w')
+  test('megawatts to watts', () => {
+    const result = convert(1, 'megawatts').to('watts')
     expect(result).toBe(1000000)
   })
 })

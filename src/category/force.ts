@@ -1,8 +1,9 @@
 import { Unit } from '../types'
 
 export const force: Record<string, Unit> = {
-  n: {
-    name: 'newtons',
+  newtons: {
+    names: ['newton', 'newtons'],
+    symbols: ['N'],
     toBase: (value) => {
       return value
     },
@@ -10,8 +11,9 @@ export const force: Record<string, Unit> = {
       return value
     },
   },
-  kn: {
-    name: 'kilonewtons',
+  kilonewtons: {
+    names: ['kilonewton', 'kilonewtons'],
+    symbols: ['kN'],
     toBase: (value) => {
       return value * 1000
     },
@@ -19,8 +21,9 @@ export const force: Record<string, Unit> = {
       return value / 1000
     },
   },
-  dyn: {
-    name: 'dynes',
+  dynes: {
+    names: ['dyne', 'dynes'],
+    symbols: ['dyn'],
     toBase: (value) => {
       return value / 100000
     },
@@ -28,8 +31,9 @@ export const force: Record<string, Unit> = {
       return value * 100000
     },
   },
-  lbf: {
-    name: 'pounds-force',
+  poundsforce: {
+    names: ['pound-force', 'pounds-force'],
+    symbols: ['lbf'],
     toBase: (value) => {
       return value * 4.44822
     },
@@ -37,8 +41,9 @@ export const force: Record<string, Unit> = {
       return value / 4.44822
     },
   },
-  kgf: {
-    name: 'kilogram-force',
+  kilogramforce: {
+    names: ['kilogram-force', 'kilogram force'],
+    symbols: ['kgf'],
     toBase: (value) => {
       return value * 9.80665
     },

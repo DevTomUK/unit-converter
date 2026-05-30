@@ -1,8 +1,9 @@
 import { Unit } from '../types'
 
 export const frequency: Record<string, Unit> = {
-  hz: {
-    name: 'hertz',
+  hertz: {
+    names: ['hertz'],
+    symbols: ['Hz'],
     toBase: (value) => {
       return value
     },
@@ -10,8 +11,9 @@ export const frequency: Record<string, Unit> = {
       return value
     },
   },
-  khz: {
-    name: 'kilohertz',
+  kilohertz: {
+    names: ['kilohertz'],
+    symbols: ['kHz'],
     toBase: (value) => {
       return value * 1000
     },
@@ -19,8 +21,9 @@ export const frequency: Record<string, Unit> = {
       return value / 1000
     },
   },
-  mhz: {
-    name: 'megahertz',
+  megahertz: {
+    names: ['megahertz'],
+    symbols: ['MHz'],
     toBase: (value) => {
       return value * 1000000
     },
@@ -28,8 +31,9 @@ export const frequency: Record<string, Unit> = {
       return value / 1000000
     },
   },
-  ghz: {
-    name: 'gigahertz',
+  gigahertz: {
+    names: ['gigahertz'],
+    symbols: ['GHz'],
     toBase: (value) => {
       return value * 1000000000
     },
@@ -38,7 +42,8 @@ export const frequency: Record<string, Unit> = {
     },
   },
   rpm: {
-    name: 'revolutions per minute',
+    names: ['revolutions per minute', 'revolution per minute'],
+    symbols: ['rpm'],
     toBase: (value) => {
       return value / 60
     },

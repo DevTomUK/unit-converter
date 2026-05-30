@@ -1,22 +1,22 @@
 const { convert } = require('../../dist/index.js')
 
 describe('Concentration Conversions', () => {
-  test('ppm to ppb', () => {
+  test('parts per million to parts per billion', () => {
     const result = convert(1, 'ppm').to('ppb')
     expect(result).toBe(1000)
   })
 
-  test('ppb to ppm', () => {
+  test('parts per billion to parts per million', () => {
     const result = convert(1000, 'ppb').to('ppm')
     expect(result).toBe(1)
   })
 
-  test('percent to ppm', () => {
+  test('percent to parts per million', () => {
     const result = convert(0.0001, 'percent').to('ppm')
     expect(result).toBe(1)
   })
 
-  test('ppt to ppm', () => {
+  test('parts per thousand to parts per million', () => {
     const result = convert(1, 'ppt').to('ppm')
     expect(result).toBe(1000)
   })
@@ -26,7 +26,7 @@ describe('Concentration Conversions', () => {
     expect(result).toBe(50)
   })
 
-  test('ppm to percent', () => {
+  test('parts per million to percent', () => {
     const result = convert(10000, 'ppm').to('percent')
     expect(result).toBe(1)
   })

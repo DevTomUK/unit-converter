@@ -1,8 +1,9 @@
 import { Unit } from '../types'
 
 export const concentration: Record<string, Unit> = {
-  m: {
-    name: 'molarity',
+  molarity: {
+    names: ['molar', 'molarity'],
+    symbols: ['M'],
     toBase: (value) => {
       return value
     },
@@ -11,7 +12,8 @@ export const concentration: Record<string, Unit> = {
     },
   },
   ppm: {
-    name: 'parts per million',
+    names: ['parts per million', 'part per million'],
+    symbols: ['ppm'],
     toBase: (value) => {
       return value / 1000000
     },
@@ -20,7 +22,8 @@ export const concentration: Record<string, Unit> = {
     },
   },
   ppb: {
-    name: 'parts per billion',
+    names: ['parts per billion', 'part per billion'],
+    symbols: ['ppb'],
     toBase: (value) => {
       return value / 1000000000
     },
@@ -29,7 +32,8 @@ export const concentration: Record<string, Unit> = {
     },
   },
   percent: {
-    name: 'percentage',
+    names: ['percent', 'percentage'],
+    symbols: ['%'],
     toBase: (value) => {
       return value / 100
     },
@@ -38,7 +42,8 @@ export const concentration: Record<string, Unit> = {
     },
   },
   ppt: {
-    name: 'parts per thousand',
+    names: ['parts per thousand', 'part per thousand'],
+    symbols: ['ppt'],
     toBase: (value) => {
       return value / 1000
     },

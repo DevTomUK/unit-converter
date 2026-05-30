@@ -1,8 +1,9 @@
 import { Unit } from '../types'
 
 export const length: Record<string, Unit> = {
-  m: {
-    name: 'meters',
+  meters: {
+    names: ['meter', 'meters'],
+    symbols: ['m'],
     toBase: (value) => {
       return value
     },
@@ -10,8 +11,9 @@ export const length: Record<string, Unit> = {
       return value
     },
   },
-  km: {
-    name: 'kilometers',
+  kilometers: {
+    names: ['kilometer', 'kilometers'],
+    symbols: ['km'],
     toBase: (value) => {
       return value * 1000
     },
@@ -19,8 +21,9 @@ export const length: Record<string, Unit> = {
       return value / 1000
     },
   },
-  cm: {
-    name: 'centimeters',
+  centimeters: {
+    names: ['centimeter', 'centimeters'],
+    symbols: ['cm'],
     toBase: (value) => {
       return value / 100
     },
@@ -28,8 +31,9 @@ export const length: Record<string, Unit> = {
       return value * 100
     },
   },
-  mm: {
-    name: 'millimeters',
+  millimeters: {
+    names: ['millimeter', 'millimeters'],
+    symbols: ['mm'],
     toBase: (value) => {
       return value / 1000
     },
@@ -38,7 +42,8 @@ export const length: Record<string, Unit> = {
     },
   },
   miles: {
-    name: 'miles',
+    names: ['mile', 'miles'],
+    symbols: ['mi'],
     toBase: (value) => {
       return value * 1609.34
     },
@@ -47,7 +52,8 @@ export const length: Record<string, Unit> = {
     },
   },
   feet: {
-    name: 'feet',
+    names: ['foot', 'feet'],
+    symbols: ['ft'],
     toBase: (value) => {
       return value * 0.3048
     },
@@ -56,7 +62,8 @@ export const length: Record<string, Unit> = {
     },
   },
   inches: {
-    name: 'inches',
+    names: ['inch', 'inches'],
+    symbols: ['in'],
     toBase: (value) => {
       return value * 0.0254
     },

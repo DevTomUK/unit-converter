@@ -2,7 +2,8 @@ import { Unit } from '../types'
 
 export const illuminance: Record<string, Unit> = {
   lux: {
-    name: 'lux',
+    names: ['lux'],
+    symbols: ['lx'],
     toBase: (value) => {
       return value
     },
@@ -10,8 +11,9 @@ export const illuminance: Record<string, Unit> = {
       return value
     },
   },
-  fc: {
-    name: 'foot-candles',
+  footcandles: {
+    names: ['foot-candle', 'foot candle'],
+    symbols: ['fc'],
     toBase: (value) => {
       return value * 10.764
     },
@@ -19,8 +21,9 @@ export const illuminance: Record<string, Unit> = {
       return value / 10.764
     },
   },
-  lmm2: {
-    name: 'lumens per square meter',
+  lumenspermetersquared: {
+    names: ['lumen per square meter', 'lumens per square meter'],
+    symbols: ['lm/m²', 'lm/m2'],
     toBase: (value) => {
       return value
     },

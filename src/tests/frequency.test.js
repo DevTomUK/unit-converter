@@ -1,33 +1,33 @@
 const { convert } = require('../../dist/index.js')
 
 describe('Frequency Conversions', () => {
-  test('khz to hz', () => {
-    const result = convert(1, 'khz').to('hz')
+  test('kilohertz to hertz', () => {
+    const result = convert(1, 'kilohertz').to('hertz')
     expect(result).toBe(1000)
   })
 
-  test('mhz to khz', () => {
-    const result = convert(1, 'mhz').to('khz')
+  test('megahertz to kilohertz', () => {
+    const result = convert(1, 'megahertz').to('kilohertz')
     expect(result).toBe(1000)
   })
 
-  test('ghz to mhz', () => {
-    const result = convert(1, 'ghz').to('mhz')
+  test('gigahertz to megahertz', () => {
+    const result = convert(1, 'gigahertz').to('megahertz')
     expect(result).toBe(1000)
   })
 
-  test('rpm to hz', () => {
-    const result = convert(60, 'rpm').to('hz')
+  test('rpm to hertz', () => {
+    const result = convert(60, 'rpm').to('hertz')
     expect(result).toBe(1)
   })
 
-  test('ghz to hz', () => {
-    const result = convert(1, 'ghz').to('hz')
+  test('gigahertz to hertz', () => {
+    const result = convert(1, 'gigahertz').to('hertz')
     expect(result).toBe(1000000000)
   })
 
-  test('mhz to hz', () => {
-    const result = convert(5, 'mhz').to('hz')
+  test('megahertz to hertz', () => {
+    const result = convert(5, 'megahertz').to('hertz')
     expect(result).toBe(5000000)
   })
 })

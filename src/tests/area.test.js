@@ -1,33 +1,33 @@
 const { convert } = require('../../dist/index.js')
 
 describe('Area Conversions', () => {
-  test('hectares to m2', () => {
-    const result = convert(1, 'hectare').to('m2')
+  test('hectares to square meters', () => {
+    const result = convert(1, 'hectares').to('squaremeters')
     expect(result).toBe(10000)
   })
 
-  test('acres to m2', () => {
-    const result = convert(1, 'acre').to('m2')
+  test('acres to square meters', () => {
+    const result = convert(1, 'acres').to('squaremeters')
     expect(Math.round(result)).toBe(4047)
   })
 
-  test('km2 to m2', () => {
-    const result = convert(1, 'km2').to('m2')
+  test('square kilometers to square meters', () => {
+    const result = convert(1, 'squarekilometers').to('squaremeters')
     expect(result).toBe(1000000)
   })
 
-  test('sqft to m2', () => {
-    const result = convert(100, 'sqft').to('m2')
+  test('square feet to square meters', () => {
+    const result = convert(100, 'squarefeet').to('squaremeters')
     expect(Math.round(result * 100) / 100).toBe(9.29)
   })
 
   test('hectares to acres', () => {
-    const result = convert(1, 'hectare').to('acre')
+    const result = convert(1, 'hectares').to('acres')
     expect(Math.round(result * 100) / 100).toBe(2.47)
   })
 
-  test('square miles to km2', () => {
-    const result = convert(1, 'sqmi').to('km2')
+  test('square miles to square kilometers', () => {
+    const result = convert(1, 'squaremiles').to('squarekilometers')
     expect(Math.round(result * 100) / 100).toBe(2.59)
   })
 })

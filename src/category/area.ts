@@ -1,8 +1,9 @@
 import { Unit } from '../types'
 
 export const area: Record<string, Unit> = {
-  m2: {
-    name: 'square meters',
+  squaremeters: {
+    names: ['square meter', 'square meters'],
+    symbols: ['m²', 'm2'],
     toBase: (value) => {
       return value
     },
@@ -10,8 +11,9 @@ export const area: Record<string, Unit> = {
       return value
     },
   },
-  km2: {
-    name: 'square kilometers',
+  squarekilometers: {
+    names: ['square kilometer', 'square kilometers'],
+    symbols: ['km²', 'km2'],
     toBase: (value) => {
       return value * 1000000
     },
@@ -19,8 +21,9 @@ export const area: Record<string, Unit> = {
       return value / 1000000
     },
   },
-  hectare: {
-    name: 'hectares',
+  hectares: {
+    names: ['hectare', 'hectares'],
+    symbols: ['ha'],
     toBase: (value) => {
       return value * 10000
     },
@@ -28,8 +31,9 @@ export const area: Record<string, Unit> = {
       return value / 10000
     },
   },
-  acre: {
-    name: 'acres',
+  acres: {
+    names: ['acre', 'acres'],
+    symbols: ['ac'],
     toBase: (value) => {
       return value * 4046.86
     },
@@ -37,8 +41,9 @@ export const area: Record<string, Unit> = {
       return value / 4046.86
     },
   },
-  sqft: {
-    name: 'square feet',
+  squarefeet: {
+    names: ['square foot', 'square feet'],
+    symbols: ['ft²', 'ft2'],
     toBase: (value) => {
       return value * 0.092903
     },
@@ -46,8 +51,9 @@ export const area: Record<string, Unit> = {
       return value / 0.092903
     },
   },
-  sqmi: {
-    name: 'square miles',
+  squaremiles: {
+    names: ['square mile', 'square miles'],
+    symbols: ['mi²', 'mi2'],
     toBase: (value) => {
       return value * 2589988
     },
