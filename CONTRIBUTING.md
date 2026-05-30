@@ -1,64 +1,114 @@
-# Contributing
+# Contributing to Unit Converter
 
-Thanks for contributing!
+Thank you for helping make this project better! Contributing is easy, even if you're new to open source.
 
 ## Adding a New Unit Category
 
-### 1. Fork the repository
----
+### 1. Fork the Repository
 
-### 2. Clone your fork
+Click the **Fork** button on GitHub to create your own copy of the project.
 
-```typescript
+### 2. Clone Your Fork
+
+```bash
 git clone https://github.com/YOUR_USERNAME/unit-converter.git
 cd unit-converter
 npm install
 ```
-- *This will clone the repo to your own PC, change to the unit-converter directory, then install the required dependencies to the project*
 
-### 3. Choose a conversion technique to add:
-
-###### Check out /src/example.ts for a walkthrough on how to structure these files:
-
-##### - New category - (e.g. length, mass, temperature, volume, etc)
- - Create a new .ts file in /src/category/ with the category type
- - Create a test file in /src/tests/
----
-
-##### - Add to a categories conversions - (e.g. L -> usGallon)
- - Edit a current *category*.ts file by adding a new unit in the object (please follow the current structure)
- - Add a couple tests for your new unit in /src/tests/*category*
+This clones the repo to your PC, navigates to the directory, and installs dependencies.
 
 ---
 
-### 4. Update the README.md:
- - Add your changes to the Supported Units section of README.md (please follow the current structure)
+### 3. Choose What to Add
 
-### 5. Build the project:
- ```typescript
- npm run build
+#### Option A: New Category (e.g., volume, pressure, speed)
+
+**Reference:** Check out `/src/category/example.ts` for a template.
+
+1. Create a new `.ts` file in `/src/category/` (e.g., `volume.ts`)
+```bash
+   cp src/category/example.ts src/category/volume.ts
 ```
 
-### 6.  Run tests:
- ```typescript
- npm test
+2. Edit the file and define your units following the template structure
+
+3. Create a test file in `/src/tests/volume.test.js`
+
+#### Option B: Add Units to Existing Category (e.g., add Fahrenheit to temperature)
+
+1. Edit the existing category file in `/src/category/` (e.g., `temperature.ts`)
+2. Add your new unit to the object, following the current structure
+3. Add tests in `/src/tests/temperature.test.js`
+
+---
+
+### 4. Write Tests
+
+Add at least 3 test cases in your test file. Reference existing tests in `/src/tests/` for examples.
+
+**Example:**
+```javascript
+const convert = require('../../dist/index.js').default
+
+describe('Volume Conversions', () => {
+  test('liters to ml', () => {
+    const result = convert.liter(1).to.ml()
+    expect(result).toBe(1000)
+  })
+})
 ```
 
+---
 
-### 7. Commit and push your changes
+### 5. Update README.md
 
-```typescript
+Add your new units to the **Supported Units** section, following the current format.
+
+---
+
+### 6. Build & Test
+
+```bash
+npm run build
+npm test
+```
+
+All tests must pass before opening a PR.
+
+---
+
+### 7. Commit & Push
+
+```bash
 git add .
-git commit -m "Add volume conversions"
-git push
+git commit -m "Add volume conversions (liter, ml, gallon)"
+git push origin your-branch-name
 ```
 
-### 8. Open a Pull Request on GitHub
 ---
+
+### 8. Open a Pull Request
+
+Go to the original repository and click **New Pull Request**. Describe what you added and wait for review!
+
+---
+
 ## Guidelines
 
-* Use logical base units
-* Add tests for your conversions
-* Keep conversions accurate
+✅ **Do:**
+- Pick logical base units (e.g., meters for length, kilograms for mass)
+- Write accurate conversion formulas
+- Add tests for all new units
+- Keep code consistent with existing files
 
-That's it!
+❌ **Don't:**
+- Edit `src/index.ts` (we handle imports)
+- Modify existing units (add new ones instead)
+- Skip tests
+
+---
+
+## Questions?
+
+Open an issue on GitHub or check out existing PRs to see how others contributed!

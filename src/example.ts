@@ -1,11 +1,11 @@
 import { Unit } from './types'
 
-// COPY THIS FILE OR CREATE A NEW FILE IN THIS STRUCTURE TO CREATE A NEW CATEGORY
+// COPY THIS FILE TO CREATE A NEW UNIT CATEGORY
 // Example: rename to "volume.ts" and fill in the conversions below
 
 export const example: Record<string, Unit> = {
 
-  // THIS IS YOUR BASE UNIT - EVERY OTHER UNIT WILL NEED A CONVERSION TECHNIQUE TO GET TO AND FROM THIS
+  // THIS IS YOUR BASE UNIT - every other unit converts to/from this
   // (This is basically scale:1)
 
   milliliters: {
@@ -18,8 +18,8 @@ export const example: Record<string, Unit> = {
     },
   },
 
-  // THIS IS A RELATEABLE UNIT TO THE BASE UNIT. IT GIVES A FORMULA TO WORK OUT THE CONVERSION BETWEEN THE TWO
-  
+  // OTHER UNITS - add formulas to convert to/from the base unit
+  // (This is basically scale:1000)
 
   liter: {
     name: 'L',
@@ -36,37 +36,14 @@ export const example: Record<string, Unit> = {
   fluidounce: {
     name: 'Fl/Oz',
     toBase: (value) => {
-      return value * 10 / 2 // Or whatever that would be
+      return value * 29.5735
     },
     fromBase: (value) => {
-      return value / 2 * 10 // Or whatever that would be
+      return value / 29.5735
     },
   },
 }
 
-// CHECK OUT CONTRIBUTING.md
 
-
-// NOW CREATE SOME TESTS FOR YOUR CONVERSION IN src/tests/*
-
-// const convert = require('../dist/index.js').default
-
-// COPY THIS FILE TO CREATE TESTS FOR YOUR NEW UNIT CATEGORY
-// Example: rename to "volume.test.js" and update the tests below
-
-// describe('Example Unit Category', () => {
-//   test('base_unit to base_unit should equal the same value', () => {
-//     const result = convert.base_unit(5).to.base_unit()
-//     expect(result).toBe(5)
-//   })
-
-//   test('other_unit to base_unit should convert correctly', () => {
-//     const result = convert.other_unit(10).to.base_unit()
-//     expect(result).toBe(100) // 10 * 10
-//   })
-
-//   test('base_unit to other_unit should convert correctly', () => {
-//     const result = convert.base_unit(100).to.other_unit()
-//     expect(result).toBe(10) // 100 / 10
-//   })
-// })
+// See CONTRIBUTING.md for step-by-step instructions
+// Create tests in src/tests/example.test.js following the pattern in existing test files

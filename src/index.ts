@@ -1,15 +1,15 @@
 import { length } from './category/length'
 import { mass } from './category/mass'
 import { temperature } from './category/temperature'
-import { Convert, Conversion } from './types'
+import { Convert, Conversion, Unit } from './types'
 
-const categories = {
+const categories: Record<string, Record<string, Unit>> = {
   length,
   mass,
   temperature,
 }
 
-function createConversion(value: number, fromUnit: any): Conversion {
+function createConversion(value: number, fromUnit: Unit): Conversion {
   return {
     value,
     unit: fromUnit,
@@ -18,17 +18,20 @@ function createConversion(value: number, fromUnit: any): Conversion {
   }
 }
 
-function createConversionMethods(value: number, fromUnit: any, direction: 'to' | 'from') {
-  const methods: any = {}
+function createConversionMethods(
+  value: number,
+  fromUnit: Unit,
+  direction: 'to' | 'from'
+): Record<string, () => number> {
+  const methods: Record<string, () => number> = {}
 
-  Object.entries(categories).forEach(([categoryName, category]: [string, any]) => {
-    Object.entries(category).forEach(([unitName, unit]: [string, any]) => {
+  Object.entries(categories).forEach(([categoryName, units]) => {
+    Object.entries(units).forEach(([unitName, unit]) => {
       methods[unitName] = () => {
         if (direction === 'to') {
           const baseValue = fromUnit.toBase(value)
           return unit.fromBase(baseValue)
         } else {
-          // from: reverse the conversion
           const baseValue = unit.toBase(value)
           return fromUnit.fromBase(baseValue)
         }

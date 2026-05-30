@@ -6,15 +6,15 @@ export type Unit = {
   fromBase: ConversionFn
 }
 
+export type ConversionMethods = {
+  [unitName: string]: () => number
+}
+
 export type Conversion = {
   value: number
   unit: Unit
-  to: {
-    [unitName: string]: () => number
-  }
-  from: {
-    [unitName: string]: () => number
-  }
+  to: ConversionMethods
+  from: ConversionMethods
 }
 
 export type Convert = {
