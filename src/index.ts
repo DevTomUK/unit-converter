@@ -56,5 +56,5 @@ const convert: Convert = new Proxy({} as Convert, {
   },
 })
 
-export { convert }
+export default convert
 export type { Unit } from './types'
