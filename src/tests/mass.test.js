@@ -1,4 +1,4 @@
-const convert = require('../../dist/index.js').default
+const { convert } = require('../../dist/index.js')
 
 describe('Mass Conversions', () => {
   test('kg to g', () => {

@@ -1,4 +1,4 @@
-const convert = require('../../dist/index.js').default
+const { convert } = require("../../dist")
 
 describe('Length Conversions', () => {
   test('miles to km', () => {
