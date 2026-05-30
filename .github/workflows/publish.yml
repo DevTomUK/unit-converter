@@ -20,9 +20,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Configure git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+        run: git config user.name "github-actions[bot]" && git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Install dependencies
         run: npm ci
@@ -33,13 +31,7 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Auto-bump version (minor)
-        run: npm version minor -m "chore: bump version to %s"
-
-      - name: Push version bump
-        run: git push origin main --tags
-
-      - name: Publish to npm
-        run: npm publish
+      - name: Bump version and publish
+        run: npm version minor && git push origin main --tags && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
