@@ -4,61 +4,55 @@ export const data: Record<string, Unit> = {
   bytes: {
     names: ['byte', 'bytes'],
     symbols: ['B'],
-    toBase: (value) => {
-      return value
-    },
-    fromBase: (value) => {
-      return value
-    },
+    description: 'The fundamental unit of digital information; equal to 8 bits.',
+    system: 'other',
+    precision: 0,
+    toBase: (v) => v,
+    fromBase: (v) => v,
   },
   kilobytes: {
     names: ['kilobyte', 'kilobytes'],
     symbols: ['KB'],
-    toBase: (value) => {
-      return value * 1024
-    },
-    fromBase: (value) => {
-      return value / 1024
-    },
+    description: 'Equal to 1,024 bytes; used for small files and text documents.',
+    system: 'other',
+    precision: 0,
+    toBase: (v) => v * 1024,
+    fromBase: (v) => v / 1024,
   },
   megabytes: {
     names: ['megabyte', 'megabytes'],
     symbols: ['MB'],
-    toBase: (value) => {
-      return value * 1048576
-    },
-    fromBase: (value) => {
-      return value / 1048576
-    },
+    description: 'Equal to 1,048,576 bytes; used for images, audio files, and applications.',
+    system: 'other',
+    precision: 2,
+    toBase: (v) => v * 1048576,
+    fromBase: (v) => v / 1048576,
   },
   gigabytes: {
     names: ['gigabyte', 'gigabytes'],
     symbols: ['GB'],
-    toBase: (value) => {
-      return value * 1073741824
-    },
-    fromBase: (value) => {
-      return value / 1073741824
-    },
+    description: 'Equal to 1,073,741,824 bytes; the standard unit for storage devices and RAM.',
+    system: 'other',
+    precision: 2,
+    toBase: (v) => v * 1073741824,
+    fromBase: (v) => v / 1073741824,
   },
   terabytes: {
     names: ['terabyte', 'terabytes'],
     symbols: ['TB'],
-    toBase: (value) => {
-      return value * 1099511627776
-    },
-    fromBase: (value) => {
-      return value / 1099511627776
-    },
+    description: 'Equal to 1,099,511,627,776 bytes; used for hard drives, SSDs, and large datasets.',
+    system: 'other',
+    precision: 2,
+    toBase: (v) => v * 1099511627776,
+    fromBase: (v) => v / 1099511627776,
   },
   petabytes: {
     names: ['petabyte', 'petabytes'],
     symbols: ['PB'],
-    toBase: (value) => {
-      return value * 1125899906842624
-    },
-    fromBase: (value) => {
-      return value / 1125899906842624
-    },
+    description: 'Equal to 1,125,899,906,842,624 bytes; used for data centres and cloud storage at scale.',
+    system: 'other',
+    precision: 2,
+    toBase: (v) => v * 1125899906842624,
+    fromBase: (v) => v / 1125899906842624,
   },
 }

@@ -4,61 +4,55 @@ export const area: Record<string, Unit> = {
   squaremeters: {
     names: ['square meter', 'square meters'],
     symbols: ['m²', 'm2'],
-    toBase: (value) => {
-      return value
-    },
-    fromBase: (value) => {
-      return value
-    },
+    description: 'The SI derived unit of area; equivalent to a square with sides of one meter.',
+    system: 'SI',
+    precision: 2,
+    toBase: (v) => v,
+    fromBase: (v) => v,
   },
   squarekilometers: {
     names: ['square kilometer', 'square kilometers'],
     symbols: ['km²', 'km2'],
-    toBase: (value) => {
-      return value * 1000000
-    },
-    fromBase: (value) => {
-      return value / 1000000
-    },
+    description: 'Equal to 1,000,000 m²; used for geographic and regional areas.',
+    system: 'metric',
+    precision: 3,
+    toBase: (v) => v * 1000000,
+    fromBase: (v) => v / 1000000,
   },
   hectares: {
     names: ['hectare', 'hectares'],
     symbols: ['ha'],
-    toBase: (value) => {
-      return value * 10000
-    },
-    fromBase: (value) => {
-      return value / 10000
-    },
+    description: 'Equal to 10,000 m²; the standard unit for agricultural land area.',
+    system: 'metric',
+    precision: 2,
+    toBase: (v) => v * 10000,
+    fromBase: (v) => v / 10000,
   },
   acres: {
     names: ['acre', 'acres'],
     symbols: ['ac'],
-    toBase: (value) => {
-      return value * 4046.86
-    },
-    fromBase: (value) => {
-      return value / 4046.86
-    },
+    description: 'Imperial unit of area equal to 43,560 sq ft (4,046.86 m²); widely used for land in the US and UK.',
+    system: 'imperial',
+    precision: 3,
+    toBase: (v) => v * 4046.86,
+    fromBase: (v) => v / 4046.86,
   },
   squarefeet: {
     names: ['square foot', 'square feet'],
     symbols: ['ft²', 'ft2'],
-    toBase: (value) => {
-      return value * 0.092903
-    },
-    fromBase: (value) => {
-      return value / 0.092903
-    },
+    description: 'Imperial unit of area equal to a square with sides of one foot; standard for floor areas in the US.',
+    system: 'imperial',
+    precision: 2,
+    toBase: (v) => v * 0.092903,
+    fromBase: (v) => v / 0.092903,
   },
   squaremiles: {
     names: ['square mile', 'square miles'],
     symbols: ['mi²', 'mi2'],
-    toBase: (value) => {
-      return value * 2589988
-    },
-    fromBase: (value) => {
-      return value / 2589988
-    },
+    description: 'Imperial unit of area equal to 640 acres (2,589,988 m²); used for large geographic regions.',
+    system: 'imperial',
+    precision: 4,
+    toBase: (v) => v * 2589988,
+    fromBase: (v) => v / 2589988,
   },
 }

@@ -4,71 +4,64 @@ export const length: Record<string, Unit> = {
   meters: {
     names: ['meter', 'meters'],
     symbols: ['m'],
-    toBase: (value) => {
-      return value
-    },
-    fromBase: (value) => {
-      return value
-    },
+    description: 'The SI base unit of length.',
+    system: 'SI',
+    precision: 2,
+    toBase: (v) => v,
+    fromBase: (v) => v,
   },
   kilometers: {
     names: ['kilometer', 'kilometers'],
     symbols: ['km'],
-    toBase: (value) => {
-      return value * 1000
-    },
-    fromBase: (value) => {
-      return value / 1000
-    },
+    description: 'Equal to 1,000 meters; the standard unit for road and geographic distances.',
+    system: 'metric',
+    precision: 3,
+    toBase: (v) => v * 1000,
+    fromBase: (v) => v / 1000,
   },
   centimeters: {
     names: ['centimeter', 'centimeters'],
     symbols: ['cm'],
-    toBase: (value) => {
-      return value / 100
-    },
-    fromBase: (value) => {
-      return value * 100
-    },
+    description: 'One hundredth of a meter; commonly used for everyday measurements.',
+    system: 'metric',
+    precision: 1,
+    toBase: (v) => v / 100,
+    fromBase: (v) => v * 100,
   },
   millimeters: {
     names: ['millimeter', 'millimeters'],
     symbols: ['mm'],
-    toBase: (value) => {
-      return value / 1000
-    },
-    fromBase: (value) => {
-      return value * 1000
-    },
+    description: 'One thousandth of a meter; used in engineering and precision work.',
+    system: 'metric',
+    precision: 0,
+    toBase: (v) => v / 1000,
+    fromBase: (v) => v * 1000,
   },
   miles: {
     names: ['mile', 'miles'],
     symbols: ['mi'],
-    toBase: (value) => {
-      return value * 1609.34
-    },
-    fromBase: (value) => {
-      return value / 1609.34
-    },
+    description: 'Imperial unit of length equal to 1,760 yards (1,609.34 m); standard for road distances in the US and UK.',
+    system: 'imperial',
+    precision: 4,
+    toBase: (v) => v * 1609.34,
+    fromBase: (v) => v / 1609.34,
   },
   feet: {
     names: ['foot', 'feet'],
     symbols: ['ft'],
-    toBase: (value) => {
-      return value * 0.3048
-    },
-    fromBase: (value) => {
-      return value / 0.3048
-    },
+    description: 'Imperial unit equal to 12 inches (0.3048 m); widely used in the US for height and altitude.',
+    system: 'imperial',
+    precision: 2,
+    toBase: (v) => v * 0.3048,
+    fromBase: (v) => v / 0.3048,
   },
   inches: {
     names: ['inch', 'inches'],
     symbols: ['in'],
-    toBase: (value) => {
-      return value * 0.0254
-    },
-    fromBase: (value) => {
-      return value / 0.0254
-    },
+    description: 'Imperial unit equal to one twelfth of a foot (2.54 cm).',
+    system: 'imperial',
+    precision: 2,
+    toBase: (v) => v * 0.0254,
+    fromBase: (v) => v / 0.0254,
   },
 }

@@ -4,61 +4,55 @@ export const pressure: Record<string, Unit> = {
   pascals: {
     names: ['pascal', 'pascals'],
     symbols: ['Pa'],
-    toBase: (value) => {
-      return value
-    },
-    fromBase: (value) => {
-      return value
-    },
-  },
-  bars: {
-    names: ['bar', 'bars'],
-    symbols: ['bar'],
-    toBase: (value) => {
-      return value * 100000
-    },
-    fromBase: (value) => {
-      return value / 100000
-    },
-  },
-  psi: {
-    names: ['pound per square inch', 'pounds per square inch'],
-    symbols: ['psi'],
-    toBase: (value) => {
-      return value * 6894.76
-    },
-    fromBase: (value) => {
-      return value / 6894.76
-    },
-  },
-  atmospheres: {
-    names: ['atmosphere', 'atmospheres'],
-    symbols: ['atm'],
-    toBase: (value) => {
-      return value * 101325
-    },
-    fromBase: (value) => {
-      return value / 101325
-    },
-  },
-  millimetersmercury: {
-    names: ['millimeter of mercury', 'millimeters of mercury'],
-    symbols: ['mmHg'],
-    toBase: (value) => {
-      return value * 133.322
-    },
-    fromBase: (value) => {
-      return value / 133.322
-    },
+    description: 'The SI derived unit of pressure; one newton per square meter.',
+    system: 'SI',
+    precision: 2,
+    toBase: (v) => v,
+    fromBase: (v) => v,
   },
   kilopascals: {
     names: ['kilopascal', 'kilopascals'],
     symbols: ['kPa'],
-    toBase: (value) => {
-      return value * 1000
-    },
-    fromBase: (value) => {
-      return value / 1000
-    },
+    description: 'Equal to 1,000 pascals; commonly used in weather forecasting and tyre pressure outside the US.',
+    system: 'metric',
+    precision: 3,
+    toBase: (v) => v * 1000,
+    fromBase: (v) => v / 1000,
+  },
+  bars: {
+    names: ['bar', 'bars'],
+    symbols: ['bar'],
+    description: 'Metric unit of pressure equal to 100,000 Pa; approximately equal to average atmospheric pressure at sea level.',
+    system: 'metric',
+    precision: 3,
+    toBase: (v) => v * 100000,
+    fromBase: (v) => v / 100000,
+  },
+  atmospheres: {
+    names: ['atmosphere', 'atmospheres'],
+    symbols: ['atm'],
+    description: 'Standard unit of atmospheric pressure at sea level; exactly 101,325 Pa.',
+    system: 'other',
+    precision: 4,
+    toBase: (v) => v * 101325,
+    fromBase: (v) => v / 101325,
+  },
+  psi: {
+    names: ['pound per square inch', 'pounds per square inch'],
+    symbols: ['psi'],
+    description: 'Imperial unit of pressure equal to 6,894.76 Pa; widely used in the US for tyre pressure, hydraulics, and plumbing.',
+    system: 'imperial',
+    precision: 2,
+    toBase: (v) => v * 6894.76,
+    fromBase: (v) => v / 6894.76,
+  },
+  millimetersmercury: {
+    names: ['millimeter of mercury', 'millimeters of mercury'],
+    symbols: ['mmHg'],
+    description: 'Pressure exerted by a 1 mm column of mercury; the standard unit for blood pressure and barometric readings.',
+    system: 'other',
+    precision: 2,
+    toBase: (v) => v * 133.322,
+    fromBase: (v) => v / 133.322,
   },
 }

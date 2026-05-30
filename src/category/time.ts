@@ -4,71 +4,64 @@ export const time: Record<string, Unit> = {
   seconds: {
     names: ['second', 'seconds'],
     symbols: ['s', 'sec'],
-    toBase: (value) => {
-      return value
-    },
-    fromBase: (value) => {
-      return value
-    },
+    description: 'The SI base unit of time.',
+    system: 'SI',
+    precision: 3,
+    toBase: (v) => v,
+    fromBase: (v) => v,
   },
   milliseconds: {
     names: ['millisecond', 'milliseconds'],
     symbols: ['ms'],
-    toBase: (value) => {
-      return value / 1000
-    },
-    fromBase: (value) => {
-      return value * 1000
-    },
+    description: 'One thousandth of a second; used in computing, networking, and reaction time.',
+    system: 'metric',
+    precision: 0,
+    toBase: (v) => v / 1000,
+    fromBase: (v) => v * 1000,
   },
   minutes: {
     names: ['minute', 'minutes'],
     symbols: ['min'],
-    toBase: (value) => {
-      return value * 60
-    },
-    fromBase: (value) => {
-      return value / 60
-    },
+    description: 'Sixty seconds; a conventional unit of time used universally.',
+    system: 'other',
+    precision: 2,
+    toBase: (v) => v * 60,
+    fromBase: (v) => v / 60,
   },
   hours: {
     names: ['hour', 'hours'],
     symbols: ['h', 'hr'],
-    toBase: (value) => {
-      return value * 3600
-    },
-    fromBase: (value) => {
-      return value / 3600
-    },
+    description: 'Sixty minutes (3,600 seconds); the standard unit for scheduling and duration.',
+    system: 'other',
+    precision: 2,
+    toBase: (v) => v * 3600,
+    fromBase: (v) => v / 3600,
   },
   days: {
     names: ['day', 'days'],
     symbols: ['d'],
-    toBase: (value) => {
-      return value * 86400
-    },
-    fromBase: (value) => {
-      return value / 86400
-    },
+    description: 'Twenty-four hours (86,400 seconds); based on the Earth\'s rotation period.',
+    system: 'other',
+    precision: 2,
+    toBase: (v) => v * 86400,
+    fromBase: (v) => v / 86400,
   },
   weeks: {
     names: ['week', 'weeks'],
     symbols: ['wk'],
-    toBase: (value) => {
-      return value * 604800
-    },
-    fromBase: (value) => {
-      return value / 604800
-    },
+    description: 'Seven days (604,800 seconds); a conventional calendar unit.',
+    system: 'other',
+    precision: 2,
+    toBase: (v) => v * 604800,
+    fromBase: (v) => v / 604800,
   },
   years: {
     names: ['year', 'years'],
     symbols: ['yr', 'y'],
-    toBase: (value) => {
-      return value * 31536000
-    },
-    fromBase: (value) => {
-      return value / 31536000
-    },
+    description: 'Three hundred and sixty-five days (31,536,000 seconds); based on the Earth\'s orbital period around the Sun.',
+    system: 'other',
+    precision: 2,
+    toBase: (v) => v * 31536000,
+    fromBase: (v) => v / 31536000,
   },
 }

@@ -1,20 +1,41 @@
-export type ConversionFn = (value: number) => number
+export type ConversionFn = (value: number) => number;
+
+export type UnitSystem = 'SI' | 'metric' | 'imperial' | 'US' | 'CGS' | 'other';
 
 export type Unit = {
-  variants: {
-    [nameOrSymbol: string]: {
-      name: string
-      symbol: string
-    }
-  }
-  toBase: ConversionFn
-  fromBase: ConversionFn
-}
+  names: string[];
+  symbols: string[];
+  description: string;
+  system: UnitSystem;
+  precision: number;
+  toBase: ConversionFn;
+  fromBase: ConversionFn;
+};
+
+export type UnitInfo = {
+  name: string;
+  names: string[];
+  symbol: string;
+  symbols: string[];
+  description: string;
+  system: UnitSystem;
+  precision: number;
+  category: string;
+};
+
+export type ConversionResult = {
+  from: {
+    value: number;
+    unit: UnitInfo;
+  };
+  to: {
+    value: number;
+    unit: UnitInfo;
+  };
+};
 
 export type Conversion = {
-  value: number
-  unit: Unit
-  to: (unitName: string) => number
-}  
+  to: (unitName: string) => ConversionResult;
+};
 
-export type Convert = (value: number, unitName: string) => Conversion
+export type Convert = (value: number, unitName: string) => Conversion;

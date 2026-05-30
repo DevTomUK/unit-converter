@@ -4,31 +4,28 @@ export const temperature: Record<string, Unit> = {
   celsius: {
     names: ['celsius', 'degree celsius', 'degrees celsius'],
     symbols: ['°C', 'C'],
-    toBase: (value) => {
-      return value + 273.15
-    },
-    fromBase: (value) => {
-      return value - 273.15
-    },
+    description: 'Metric temperature scale where 0° is the freezing point of water and 100° is the boiling point at standard pressure.',
+    system: 'metric',
+    precision: 2,
+    toBase: (v) => v + 273.15,
+    fromBase: (v) => v - 273.15,
   },
   kelvin: {
     names: ['kelvin'],
     symbols: ['K'],
-    toBase: (value) => {
-      return value
-    },
-    fromBase: (value) => {
-      return value
-    },
+    description: 'The SI base unit of thermodynamic temperature; 0 K is absolute zero, the lowest possible temperature.',
+    system: 'SI',
+    precision: 2,
+    toBase: (v) => v,
+    fromBase: (v) => v,
   },
   fahrenheit: {
     names: ['fahrenheit', 'degree fahrenheit', 'degrees fahrenheit'],
     symbols: ['°F', 'F'],
-    toBase: (value) => {
-      return (value - 32) * (5 / 9) + 273.15
-    },
-    fromBase: (value) => {
-      return (value - 273.15) * (9 / 5) + 32
-    },
+    description: 'Imperial temperature scale where 32° is the freezing point of water and 212° is the boiling point.',
+    system: 'imperial',
+    precision: 1,
+    toBase: (v) => (v - 32) * (5 / 9) + 273.15,
+    fromBase: (v) => (v - 273.15) * (9 / 5) + 32,
   },
 }

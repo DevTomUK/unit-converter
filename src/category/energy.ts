@@ -4,61 +4,55 @@ export const energy: Record<string, Unit> = {
   joules: {
     names: ['joule', 'joules'],
     symbols: ['J'],
-    toBase: (value) => {
-      return value
-    },
-    fromBase: (value) => {
-      return value
-    },
+    description: 'The SI derived unit of energy; the work done by a one-newton force over one metre.',
+    system: 'SI',
+    precision: 3,
+    toBase: (v) => v,
+    fromBase: (v) => v,
   },
   kilojoules: {
     names: ['kilojoule', 'kilojoules'],
     symbols: ['kJ'],
-    toBase: (value) => {
-      return value * 1000
-    },
-    fromBase: (value) => {
-      return value / 1000
-    },
+    description: 'Equal to 1,000 joules; used for food energy and thermodynamic calculations.',
+    system: 'metric',
+    precision: 3,
+    toBase: (v) => v * 1000,
+    fromBase: (v) => v / 1000,
   },
   calories: {
     names: ['calorie', 'calories'],
     symbols: ['cal'],
-    toBase: (value) => {
-      return value * 4.184
-    },
-    fromBase: (value) => {
-      return value / 4.184
-    },
+    description: 'The energy needed to raise 1 gram of water by 1°C; equal to 4.184 J.',
+    system: 'other',
+    precision: 2,
+    toBase: (v) => v * 4.184,
+    fromBase: (v) => v / 4.184,
   },
   kilocalories: {
     names: ['kilocalorie', 'kilocalories'],
     symbols: ['kcal'],
-    toBase: (value) => {
-      return value * 4184
-    },
-    fromBase: (value) => {
-      return value / 4184
-    },
+    description: 'Equal to 1,000 calories (4,184 J); the "food Calorie" used in nutrition labelling.',
+    system: 'other',
+    precision: 2,
+    toBase: (v) => v * 4184,
+    fromBase: (v) => v / 4184,
   },
   btu: {
     names: ['BTU', 'british thermal unit'],
     symbols: ['BTU', 'Btu'],
-    toBase: (value) => {
-      return value * 1055.06
-    },
-    fromBase: (value) => {
-      return value / 1055.06
-    },
+    description: 'British Thermal Unit; the energy needed to raise 1 lb of water by 1°F (1,055.06 J). Used in heating and cooling.',
+    system: 'imperial',
+    precision: 2,
+    toBase: (v) => v * 1055.06,
+    fromBase: (v) => v / 1055.06,
   },
   watthours: {
     names: ['watt hour', 'watt hours'],
     symbols: ['Wh'],
-    toBase: (value) => {
-      return value * 3600
-    },
-    fromBase: (value) => {
-      return value / 3600
-    },
+    description: 'Equal to 3,600 joules; measures electricity consumption and battery capacity.',
+    system: 'other',
+    precision: 3,
+    toBase: (v) => v * 3600,
+    fromBase: (v) => v / 3600,
   },
 }
